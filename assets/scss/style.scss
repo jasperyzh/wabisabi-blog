@@ -1,0 +1,16 @@
+$primary: #00a19c;
+$secondary: #00635b;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+);
+
+$accordion-border-radius: 0;
+$accordion-button-bg: $primary;
+$accordion-button-active-bg: $secondary;
+$accordion-color: white;
+$accordion-padding-y: 0.75rem;
+$accordion-button-active-color: white;
+
+@import "bootstrap/scss/bootstrap";
