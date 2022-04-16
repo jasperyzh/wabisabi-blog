@@ -15,18 +15,27 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap'
+      }
+    ],
+    // script: [
+    //   {
+    //     src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+    //   }
+    // ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/scss/style.scss'
   ],
-  
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/custom.js', mode: 'client' }
+    { src: '~/plugins/main.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -34,11 +43,21 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxt/content',
+    // '@nuxt/http',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+      '~/node_modules/bootstrap/scss/_functions.scss',
+      "~/assets/scss/style-override.scss",
 
+      '~/node_modules/bootstrap/scss/_variables.scss',
+      '~/node_modules/bootstrap/scss/_mixins.scss',
+    ]
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
   ],
 
   content: {
@@ -47,5 +66,33 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    // ADDING POSTCSS 
+    // https://nuxtjs.org/docs/features/configuration#postcss-plugins
+    /* postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true
+        }
+      }
+    } */
+  },
+  // https://nuxtjs.org/docs/features/file-system-routing#the-router-property
+  // router: {
+  //   // customize the Nuxt router
+  // }
+  // https://nuxtjs.org/docs/features/loading#customizing-the-progress-bar
+  loading: {
+    color: '#eee',
+    height: '3px'
+  },
 }

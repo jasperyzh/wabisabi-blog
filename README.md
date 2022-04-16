@@ -1,5 +1,10 @@
 # jasperblog
 
+
+## log
+[Build a BLOG Using NUXT JS & The CONTENT module ~ Vue JS Tutorial by Tyler Potts](https://www.youtube.com/watch?v=1SAZMFwYUDE)
+
+
 ## Build Setup
 
 ```bash

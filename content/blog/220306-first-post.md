@@ -2,7 +2,7 @@
 title: Quick blog setup using NuxtJS & nuxt/content
 description: a first hello to you, the viewer. welcome.
 slug: 220306-first-post
-img: 220306-first-post.jpg
+img_src: 220306-first-post.jpg
 ---
 
 # Quick blog setup using NuxtJS & nuxt/content

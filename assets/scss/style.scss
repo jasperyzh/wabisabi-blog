@@ -1,16 +1,61 @@
-$primary: #00a19c;
-$secondary: #00635b;
+// Configuration
+@import "bootstrap/scss/_functions.scss";
 
-$theme-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-);
+// modify
+@import "style-override.scss";
 
-$accordion-border-radius: 0;
-$accordion-button-bg: $primary;
-$accordion-button-active-bg: $secondary;
-$accordion-color: white;
-$accordion-padding-y: 0.75rem;
-$accordion-button-active-color: white;
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/_mixins.scss";
+@import "bootstrap/scss/_utilities.scss";
 
-@import "bootstrap/scss/bootstrap";
+// Layout & components
+@import "bootstrap/scss/_root.scss";
+@import "bootstrap/scss/_reboot.scss";
+@import "bootstrap/scss/_type.scss";
+@import "bootstrap/scss/_images.scss";
+@import "bootstrap/scss/_containers.scss";
+@import "bootstrap/scss/_grid.scss";
+// @import "bootstrap/scss/_tables.scss";
+@import "bootstrap/scss/_forms.scss";
+@import "bootstrap/scss/_buttons.scss";
+@import "bootstrap/scss/_transitions.scss";
+// @import "bootstrap/scss/_dropdown.scss";
+// @import "bootstrap/scss/_button-group.scss";
+@import "bootstrap/scss/_nav.scss";
+@import "bootstrap/scss/_navbar.scss";
+@import "bootstrap/scss/_card.scss";
+// @import "bootstrap/scss/_accordion.scss";
+// @import "bootstrap/scss/_breadcrumb.scss";
+// @import "bootstrap/scss/_pagination.scss";
+// @import "bootstrap/scss/_badge.scss";
+// @import "bootstrap/scss/_alert.scss";
+// @import "bootstrap/scss/_progress.scss";
+@import "bootstrap/scss/_list-group.scss";
+@import "bootstrap/scss/_close.scss";
+// @import "bootstrap/scss/_toasts.scss";
+@import "bootstrap/scss/_modal.scss";
+// @import "bootstrap/scss/_tooltip.scss";
+// @import "bootstrap/scss/_popover.scss";
+// @import "bootstrap/scss/_carousel.scss";
+// @import "bootstrap/scss/_spinners.scss";
+@import "bootstrap/scss/_offcanvas.scss";
+
+// Helpers
+@import "bootstrap/scss/_helpers.scss";
+
+// Utilities
+@import "bootstrap/scss/utilities/_api.scss";
+
+// icons
+$bi-list: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
+
+.bi {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    &.bi-list {
+        background-image: escape-svg($bi-list);
+    }
+}
