@@ -1,40 +1,9 @@
 <template>
-  <div :class="`p5js ${slug}`">
-    <h1>{{ title }}</h1>
-    <div :id="slug"></div>
-  </div>
+  <div :id="$options._componentTag"></div>
 </template>
-
 <script>
-// import "https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js";
-
 export default {
-  name: "p5js-cube-wave",
-  data() {
-    return {
-      title: "p5js Cube Wave",
-      slug: "p5js-cube-wave",
-      isCanvasLoaded: false,
-    };
-  },
-  head() {
-    return {
-      title: this.title,
-      script: [
-        {
-          // hid: "stripe",
-          src: "https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js",
-          defer: true,
-          callback: () => {
-            this.isCanvasLoaded = true;
-          },
-        },
-      ],
-    };
-  },
-
   mounted() {
-    // [Coding Challenge #86: Cube Wave by Bees and Bombs](https://www.youtube.com/watch?v=H81Tdrmz2LA)
     const s = (p) => {
       let angle = 0;
       let w = 48;
@@ -43,7 +12,7 @@ export default {
 
       p.setup = () => {
         const canvas = p.createCanvas(640, 480, p.WEBGL);
-        canvas.parent(this.$options.name);
+        canvas.parent(this.$options._componentTag);
 
         magic_angle = p.atan(1 / p.sqrt(2));
         maxDistance = p.dist(0, 0, 200, 200);
@@ -112,9 +81,7 @@ export default {
         angle += 0.1;
       };
     };
-
     let myp5 = new p5(s);
   },
-  /*  */
 };
 </script>

@@ -1,72 +1,77 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'wabisabi-blog',
+    title: "JasperYong.com",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap'
-      }
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap",
+      },
     ],
-    // script: [
-    //   {
-    //     src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
-    //   }
-    // ],
+    script: [
+      {
+        hid: "p5js",
+        src: "https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js",
+        defer: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/scss/style.scss'
-  ],
+  css: ["~/assets/scss/style.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/main.js', mode: 'client' },
-  ],
+  plugins: [{ src: "~/plugins/main.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
+  components: {
+    dirs: ["~/components", "~/content/p5js"],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxt/content',
+    "@nuxt/content",
     // '@nuxt/http',
-    '@nuxtjs/style-resources'
+    "@nuxtjs/style-resources",
   ],
   styleResources: {
     scss: [
-      '~/node_modules/bootstrap/scss/_functions.scss',
+      "~/node_modules/bootstrap/scss/_functions.scss",
       "~/assets/scss/style-override.scss",
 
-      '~/node_modules/bootstrap/scss/_variables.scss',
-      '~/node_modules/bootstrap/scss/_mixins.scss',
-    ]
+      "~/node_modules/bootstrap/scss/_variables.scss",
+      "~/node_modules/bootstrap/scss/_mixins.scss",
+    ],
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   content: {
     // options
+    markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-material-oceanic.css",
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    // ADDING POSTCSS 
+    // ADDING POSTCSS
     // https://nuxtjs.org/docs/features/configuration#postcss-plugins
     /* postcss: {
       // Add plugin names as key and arguments as value
@@ -92,7 +97,7 @@ export default {
   // }
   // https://nuxtjs.org/docs/features/loading#customizing-the-progress-bar
   loading: {
-    color: '#eee',
-    height: '3px'
+    color: "#eee",
+    height: "3px",
   },
-}
+};

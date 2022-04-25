@@ -4,7 +4,7 @@
       <div class="container-fluid justify-content-center">
         <NuxtLink class="navbar-brand me-0" to="/">jasperyong.com</NuxtLink>
 
-        <button
+        <!-- <button
           type="button"
           class="btn position-absolute me-3"
           style="right: 0; line-height: 0"
@@ -13,11 +13,11 @@
           aria-controls="offcanvasArchives"
         >
           <span class="bi bi-list"></span>
-        </button>
+        </button> -->
       </div>
     </nav>
 
-    <div
+    <!-- <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
       id="offcanvasArchives"
@@ -32,11 +32,11 @@
           aria-label="Close"
         ></button>
       </div>
-      <!-- <div class="offcanvas-body">
+      <div class="offcanvas-body">
         <ul class="list-group list-group-flush">
           <NuxtLink class="list-group-item" to="/">Link to Post #1</NuxtLink>
         </ul>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
   </header>
 </template>

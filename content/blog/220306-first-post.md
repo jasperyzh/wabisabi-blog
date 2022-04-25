@@ -1,11 +1,9 @@
 ---
-title: Quick blog setup using NuxtJS & nuxt/content
-description: a first hello to you, the viewer. welcome.
+title: First Post
+description: A huge thank you and hello to you! <3
 slug: 220306-first-post
-img_src: 220306-first-post.jpg
+tag: nice
 ---
-
-# Quick blog setup using NuxtJS & nuxt/content
 
 This blog is created with nuxt.js with nuxt/content.
 
