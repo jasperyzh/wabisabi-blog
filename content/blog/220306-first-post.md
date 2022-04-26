@@ -3,6 +3,7 @@ title: First Post
 description: A huge thank you and hello to you! <3
 slug: 220306-first-post
 tag: nice
+created_at: 220306
 ---
 
 This blog is created with nuxt.js with nuxt/content.
