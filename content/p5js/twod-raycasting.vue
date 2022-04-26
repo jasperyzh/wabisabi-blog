@@ -1,5 +1,5 @@
 <template>
-  <div :id="$options._componentTag"></div>
+  <div class="p5js" :id="$options._componentTag"></div>
 </template>
 <script>
 export default {

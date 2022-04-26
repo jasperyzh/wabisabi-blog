@@ -1,9 +1,8 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg py-0">
       <div class="container-fluid justify-content-center">
         <NuxtLink class="navbar-brand me-0" to="/">jasperyong.com</NuxtLink>
-
         <!-- <button
           type="button"
           class="btn position-absolute me-3"

@@ -19,7 +19,7 @@ body,
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-  row-gap: 1rem;
+  // row-gap: 1rem;
 }
 
 footer {

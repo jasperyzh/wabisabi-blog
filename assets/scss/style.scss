@@ -58,3 +58,10 @@ $bi-list: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" w
         background-image: escape-svg($bi-list);
     }
 }
+
+
+// p5js
+.p5js {
+    position: relative;
+    display: inline-block;
+}

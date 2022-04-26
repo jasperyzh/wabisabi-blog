@@ -2,7 +2,7 @@
   <main class="align-self-center text-center">
     <div class="container">
       <div class="row my-3">
-        <div class="col-md-6 mx-auto">
+        <div class="col-auto mx-auto">
           <h2 class="h5">Latest sketch</h2>
           <component :is="sketches[0].slug"></component>
           <hr class="w-25 mx-auto my-3" />

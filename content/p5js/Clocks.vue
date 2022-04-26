@@ -1,29 +1,27 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div :id="$options._componentTag"></div>
+  <section>
+    <div class="p5js" :id="$options._componentTag"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-auto mx-auto clock-calendar">
+          <p class="display-4 week m-0 text-muted"></p>
+          <p class="display-1 date m-0">
+            {{ calendar.year + calendar.month + calendar.date
+            }}<small class="text-muted">{{ calendar.week }}</small>
+          </p>
+          <p class="display-1 hr">
+            {{ time.hr }}<small class="text-muted">hr</small>
+          </p>
+          <p class="display-1 min">
+            {{ time.min }}<small class="text-muted">min</small>
+          </p>
+          <p class="display-1 sec">
+            {{ time.sec }}<small class="text-muted">sec</small>
+          </p>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-auto mx-auto clock-calendar">
-        <p class="display-4 week m-0 text-muted"></p>
-        <p class="display-1 date m-0">
-          {{ calendar.year + calendar.month + calendar.date
-          }}<small class="text-muted">{{ calendar.week }}</small>
-        </p>
-        <p class="display-1 hr">
-          {{ time.hr }}<small class="text-muted">hr</small>
-        </p>
-        <p class="display-1 min">
-          {{ time.min }}<small class="text-muted">min</small>
-        </p>
-        <p class="display-1 sec">
-          {{ time.sec }}<small class="text-muted">sec</small>
-        </p>
-      </div>
-    </div>
-  </div>
+  </section>
 </template>
 <script>
 export default {
@@ -61,6 +59,12 @@ export default {
         let hr = p.hour();
         let mn = p.minute();
         let sc = p.second();
+
+        this.time = {
+          hr: this.zeroPadding(hr, 2),
+          min: this.zeroPadding(mn, 2),
+          sec: this.zeroPadding(sc, 2),
+        };
 
         p.strokeWeight(8);
         p.stroke(255, 100, 150);
@@ -101,17 +105,19 @@ export default {
     let myp5 = new p5(s);
 
     // run vuejs clock
-    var timerID = setInterval(this.updateTime, 1000);
+    this.updateTime();
+    var timerID = setInterval(this.updateTime, 1000 * 60 * 60);
   },
   methods: {
     updateTime() {
       let cd = new Date();
 
-      this.time = {
-        hr: this.zeroPadding(cd.getHours(), 2),
-        min: this.zeroPadding(cd.getMinutes(), 2),
-        sec: this.zeroPadding(cd.getSeconds(), 2),
-      };
+      // move to p5js timing
+      // this.time = {
+      //   hr: this.zeroPadding(cd.getHours(), 2),
+      //   min: this.zeroPadding(cd.getMinutes(), 2),
+      //   sec: this.zeroPadding(cd.getSeconds(), 2),
+      // };
 
       this.calendar = {
         year: this.zeroPadding(cd.getFullYear(), 2),
